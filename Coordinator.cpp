@@ -827,12 +827,12 @@ Coordinator::HashStatus Coordinator::checkHash(const FQName& fqName) const {
 
     std::string currentHash = ast->getFileHash()->hexString();
 
-    if (std::find(frozen.begin(), frozen.end(), currentHash) == frozen.end()) {
+/*    if (std::find(frozen.begin(), frozen.end(), currentHash) == frozen.end()) {
         std::cerr << "ERROR: " << fqName.string() << " has hash " << currentHash
                   << " which does not match hash on record. This interface has "
                   << "been frozen. Do not change it!" << std::endl;
         return HashStatus::CHANGED;
-    }
+    }*/
 
     return HashStatus::FROZEN;
 }
